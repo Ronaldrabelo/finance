@@ -1,4 +1,4 @@
-package com.fincance.my_money.ui.home
+package com.fincance.my_money.ui.principal
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,14 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.fincance.my_money.databinding.FragmentHomeBinding
+import com.fincance.my_money.databinding.FragmentPrincipalBinding
 
-class HomeFragment : Fragment() {
+class PrincipalFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentPrincipalBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,14 +19,14 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val principalViewModel =
+            ViewModelProvider(this).get(PrincipalViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentPrincipalBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textPrincipal
+        principalViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

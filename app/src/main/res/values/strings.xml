@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">my_money</string>
-    <string name="title_home">Home</string>
+    <string name="title_principal">Principal</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="float_button">float button</string>
+    <string name="receita">Receita</string>
+    <string name="despesa">Despesa</string>
+    <string name="title_expense">Add Expense</string>
+    <string name="title_income">Add Incomes</string>
+    <string name="digite_seu_sal_rio">Digite seu salário</string>
+    <string name="salvar_sal_rio">Salvar Salário</string>
+
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_income"
+        android:title="@string/receita"
+        android:icon="@drawable/ic_income" />
+    <item
+        android:id="@+id/menu_expense"
+        android:title="@string/despesa"
+        android:icon="@drawable/ic_expense" />
+</menu>

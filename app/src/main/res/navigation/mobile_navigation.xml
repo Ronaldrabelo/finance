@@ -5,21 +5,46 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+    <!-- Home Fragment -->
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.fincance.my_money.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.fincance.my_money.ui.principal.PrincipalFragment"
+        android:label="@string/title_principal"
+        tools:layout="@layout/fragment_principal">
+        <!-- Ações para navegar para ExpenseFragment e IncomeFragment -->
+        <action
+            android:id="@+id/action_navigation_home_to_expenseFragment"
+            app:destination="@id/expenseFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_incomeFragment"
+            app:destination="@id/incomeFragment" />
+    </fragment>
 
+    <!-- Dashboard Fragment -->
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.fincance.my_money.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
+    <!-- Notifications Fragment -->
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.fincance.my_money.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <!-- Expense Fragment -->
+    <fragment
+        android:id="@+id/expenseFragment"
+        android:name="com.fincance.my_money.ui.expenses.ExpenseFragment"
+        android:label="@string/title_expense"
+        tools:layout="@layout/fragment_expense" />
+
+    <!-- Income Fragment -->
+    <fragment
+        android:id="@+id/incomeFragment"
+        android:name="com.fincance.my_money.ui.incomes.IncomeFragment"
+        android:label="@string/title_income"
+        tools:layout="@layout/fragment_income" />
 </navigation>
