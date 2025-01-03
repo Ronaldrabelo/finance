@@ -10,5 +10,7 @@
     <string name="title_income">Add Incomes</string>
     <string name="digite_seu_sal_rio">Digite seu salário</string>
     <string name="salvar_sal_rio">Salvar Salário</string>
+    <string name="_1_vez_por_m_s">1 vez por mês</string>
+    <string name="_2_vezes_por_m_s">2 vezes por mês</string>
 
 </resources>
