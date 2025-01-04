@@ -8,8 +8,13 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+
 import com.fincance.my_money.R
 import com.fincance.my_money.databinding.FragmentIncomeBinding
+import com.fincance.my_money.model.AppDatabase
+import com.fincance.my_money.model.Income
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -88,12 +93,23 @@ class IncomeFragment : Fragment() {
             return
         }
 
-        // Lógica para salvar a receita
+        this.saveIncomeToDatabase(value, date, description, repeatTimes = 1);
         Toast.makeText(requireContext(), "Receita salva com sucesso!", Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    private fun saveIncomeToDatabase(value: Float, date: String, description: String, repeatTimes: Int?) {
+        val income = Income(value = value, date = date, description = description, repeatTimes = repeatTimes)
+
+        val database = AppDatabase.getDatabase(requireContext())
+        val incomeDao = database.incomeDao()
+
+        lifecycleScope.launch {
+            incomeDao.insertIncome(income)
+            Toast.makeText(requireContext(), "Receita salva no banco!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
